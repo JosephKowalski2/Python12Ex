@@ -18,14 +18,8 @@ def gen_list(start: int, stop: int, parity: Parity) -> List[int]:
     :param parity: determines whether odd or even values are returned
     :return: list of odd or even numbers in start stop range
     """
-    # list_of = []
-    # for value in range(start, stop):
-    #     if parity == parity.EVEN and value % 2 == 0:
-    #         list_of.append(value)
-    #     elif parity == parity.ODD and value % 2 != 0:
-    #         list_of.append(value)
-    # return list_of
-    return [value for value in range(start, stop) if (parity == parity.EVEN and value % 2 == 0) or (parity == parity.ODD and value % 2 != 0)]
+    return [value for value in range(start, stop) if
+            (parity == parity.EVEN and value % 2 == 0) or (parity == parity.ODD and value % 2 != 0)]
 
 
 def gen_dict(start: int, stop: int, strategy: Callable) -> Dict:
@@ -35,12 +29,12 @@ def gen_dict(start: int, stop: int, strategy: Callable) -> Dict:
     updating this here docstring to something useful.
 
 
-    :param start:
-    :param stop:
-    :param strategy:
-    :return:
+    :param start: integer value to start at
+    :param stop: integer value to end before
+    :param strategy: math function used on value
+    :return: dictonary key of integer number and value of key value after math function used
     """
-    pass
+    return {number: strategy(number) for number in range(start, stop)}
 
 
 def gen_set(val_in: str) -> Set:
