@@ -43,7 +43,7 @@ def gen_set(val_in: str) -> Set:
     what this method was supposed to do. Hey if you do, maybe you could do some good in this world by
     updating this here docstring to something useful.
 
-    :param val_in:
-    :return:
+    :param val_in:string value
+    :return: lower case letters in string in order of alphabetically or order of appearence
     """
-    pass
+    return {letter.upper() for letter in val_in if letter == letter.lower()}
